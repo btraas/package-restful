@@ -50,6 +50,17 @@ In priority order:
 - as an HTTP-ACCEPT header attribute
 - otherwise, using the default format in the package config file.
 
+##Putting it together...
+
+If you want to pass an "id" parameter, with the value "123", and you want
+the response in "json", you could do that with any of:
+
+- /controller/item/id/123.json
+- /controller/item/id/123/format/json
+- /controller/item?id=123&format=json
+
+These would be available to the item_VERB() using $this->get("id"), $this->post("id")
+or $this->put("id"), or $this->delete("id"), depending on the HTTP verb type.
 
 #Disclaimer
 
