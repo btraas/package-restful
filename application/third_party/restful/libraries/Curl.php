@@ -129,7 +129,10 @@ class Curl {
         $this->option(CURLOPT_POSTFIELDS, http_build_query($params, NULL, '&'));
 
         $this->http_method('put');
-        $this->option(CURLOPT_POSTFIELDS, $params);
+ 
+		// btraas 2017-12-02
+		// This was overriding the above fix
+		// $this->option(CURLOPT_POSTFIELDS, $params);
 
         // Override method, I think this overrides $_POST with PUT data but... we'll see eh?
         //$this->option(CURLOPT_HTTPHEADER, array('X-HTTP-Method-Override: PUT'));
